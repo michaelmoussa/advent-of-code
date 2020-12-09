@@ -13,7 +13,9 @@ def get_input(year: int, day: int, force: bool = False) -> List[str]:
 
     You must have a valid cookie configured. See README for details.
     """
-    input_file = Path(f"{Path().absolute()}/input/{year}/{day}.txt")
+    year_input_dir = Path(f"{Path().absolute()}/input/{year}")
+    year_input_dir.mkdir(exist_ok=True)
+    input_file = Path(f"{year_input_dir}/{day}.txt")
 
     if force or not input_file.is_file() or input_file.stat().st_size == 0:
         with open(f"{Path().absolute()}/.cookie") as cookie:
