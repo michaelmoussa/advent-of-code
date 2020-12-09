@@ -24,9 +24,9 @@ def part2(input: str) -> int:
         try:
             (first_pos, second_pos, character, password) = PATTERN.findall(line)[0]
 
-            if (password[int(first_pos) - 1] == character) != (
+            if (password[int(first_pos) - 1] == character) ^ (
                 password[int(second_pos) - 1] == character
-            ):  # XOR, basically
+            ):
                 valid += 1
         except IndexError:
             raise Exception("🤷‍♂️")
