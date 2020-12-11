@@ -1,9 +1,10 @@
 import re
+from typing import List
 
 PATTERN = re.compile(r"^([0-9]+)-([0-9]+) ([a-z]): (.+)$")
 
 
-def part1(input: str) -> int:
+def part1(input: List[str]) -> int:
     valid = 0
 
     for line in input:
@@ -17,7 +18,7 @@ def part1(input: str) -> int:
     return valid
 
 
-def part2(input: str) -> int:
+def part2(input: List[str]) -> int:
     valid = 0
 
     for line in input:
